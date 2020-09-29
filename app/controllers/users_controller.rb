@@ -19,9 +19,9 @@ class UsersController < ApplicationController
   end
 
   
-  def authorize_user                                                             
-    render json: { status: 401, message: "Unauthorized" } unless get_current_user.id == params[:id].to_i                                                         
-  end
+  # def authorize_user                                                             
+  #   render json: { status: 401, message: "Unauthorized" } unless get_current_user.id == params[:id].to_i                                                         
+  # end
 
   def login                                                                        
     user = User.find_by(username: params[:user][:username])                        
@@ -60,6 +60,12 @@ class UsersController < ApplicationController
   end
 
   private
+
+   # Use callbacks to share common setup or constraints between actions.
+   def set_user
+    @user = User.find(params[:id])
+  end
+
   def create_token(id, username)
     JWT.encode(payload(id, username), ENV['JWT_SECRET'], 'HS256')
   end
@@ -76,13 +82,10 @@ class UsersController < ApplicationController
     }
   end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+   
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:username, :password_digest)
+      params.require(:user).permit(:username, :password, :password_digest)
     end
 end
