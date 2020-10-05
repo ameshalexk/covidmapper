@@ -1,24 +1,24 @@
-# README
+# CovidMapper
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Project: Covid 19 stats tracker 
 
-Things you may want to cover:
+<hr>
 
-* Ruby version
+## Project URL:  
+[Covidmapper](https://covidmapper.herokuapp.com/)
 
-* System dependencies
 
-* Configuration
+## MVP User stories:
+* As a User I want to sign up and login to see the app.
+* As an Engineer I want users to login else they will be asked to login.
+* As a User I want to login and redirected to home page
+* As a User I want a quick overview of world map with all data spread out city wise color coded.
+* As a User I want to click on a city and see the statistics.
 
-* Database creation
+## Tech Used:
+* MERN Stack with RAILS to manage users access with backend authentication.
+* Free Covid 19 API. 
+* POSTGRES will store the information on each user.
+* MAPBOX to render MAPS.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<hr>
